@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Best Cars Dealership</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f9f9f9;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .contact-header {
+      background-color: darkturquoise;
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    .contact-container {
+      max-width: 80%;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .contact-container h2 {
+      color: darkturquoise;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      font-weight: bold;
+    }
+
+    .form-control {
+      border-radius: 5px;
+    }
+
+    .btn-primary {
+      background-color: darkturquoise;
+      border-color: darkturquoise;
+    }
+
+    .btn-primary:hover {
+      background-color: #17a2b8;
+      border-color: #17a2b8;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .contact-info div {
+      margin: 1rem;
+    }
+
+    .contact-info div h4 {
+      margin-bottom: 0.5rem;
+      color: darkturquoise;
+    }
+
+    footer {
+      text-align: center;
+      margin: 2rem 0;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: darkturquoise;">
+    <div class="container-fluid">
+      <h2 style="color: white;">Dealerships</h2>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="/about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white active" href="/contact">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contact Header -->
+  <div class="contact-header">
+    <h1>Contact Us</h1>
+    <p>We’d love to hear from you! Reach out to us for any inquiries or assistance.</p>
+  </div>
+
+  <!-- Contact Form -->
+  <div class="contact-container">
+    <h2>Get In Touch</h2>
+    <form action="#" method="post">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" required>
+      </div>
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter the subject" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea class="form-control" id="message" name="message" rows="5" placeholder="Write your message here" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Send Message</button>
+    </form>
+
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <div>
+        <h4>Phone</h4>
+        <p>+1 (123) 456-7890</p>
+      </div>
+      <div>
+        <h4>Email</h4>
+        <p>support@bestcarsdealership.com</p>
+      </div>
+      <div>
+        <h4>Address</h4>
+        <p>123 Main Street, Los Angeles, CA</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Best Cars Dealership. All rights reserved.</p>
+  </footer>
+</body>
+</html>
