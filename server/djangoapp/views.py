@@ -131,13 +131,34 @@ def get_dealer_reviews(request, dealer_id):
 # Create a `add_review` view to submit a review
 # def add_review(request):
 # ...
+# def add_review(request):
+#     if(request.user.is_anonymous == False):
+#         data = json.loads(request.body)
+#         try:
+#             response = post_review(data)
+#             return JsonResponse({"status":200})
+#         except:
+#             return JsonResponse({"status":401,"message":"Error in posting review"})
+#     else:
+#         return JsonResponse({"status":403,"message":"Unauthorized"})
+
 def add_review(request):
-    if(request.user.is_anonymous == False):
-        data = json.loads(request.body)
+    if request.method == "POST":
+        # Process the review data
         try:
-            response = post_review(data)
-            return JsonResponse({"status":200})
-        except:
-            return JsonResponse({"status":401,"message":"Error in posting review"})
-    else:
-        return JsonResponse({"status":403,"message":"Unauthorized"})
+            data = json.loads(request.body)
+            # Save the review to the database
+            review = review.objects.create(
+                name=data["name"],
+                dealership_id=data["dealership"],
+                review=data["review"],
+                purchase=data["purchase"],
+                purchase_date=data["purchase_date"],
+                car_make=data["car_make"],
+                car_model=data["car_model"],
+                car_year=data["car_year"],
+            )
+            return JsonResponse({"status": 200, "message": "Review added successfully!"})
+        except Exception as e:
+            return JsonResponse({"status": 400, "message": f"Error: {str(e)}"})
+    return JsonResponse({"status": 405, "message": "Method not allowed"})
